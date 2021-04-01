@@ -1,11 +1,6 @@
 html,
 body {
     width: 100%;
-    scroll-snap-type: y proximity;
-}
-
-.snap-point {
-    scroll-snap-align: start;
 }
 
 main {
