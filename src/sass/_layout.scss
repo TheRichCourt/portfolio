@@ -1,0 +1,54 @@
+html,
+body {
+    width: 100%;
+    scroll-snap-type: y proximity;
+}
+
+.snap-point {
+    scroll-snap-align: start;
+}
+
+main {
+    width: 100%;
+}
+
+.fill-viewport {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.relative {
+    position: relative;
+}
+
+.centre-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+        max-width: 100%;
+    }
+}
+
+// @todo consider renaming
+.inner {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.flex {
+    display: flex;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+
+    &.middle {
+        align-items: center;
+    }
+}
+
+.flex-1 {
+    flex: 1 1 0;
+}

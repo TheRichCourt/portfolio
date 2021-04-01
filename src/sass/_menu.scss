@@ -1,0 +1,29 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    ul {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            padding: 1rem;
+            font-family: 'Sharp Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+            font-weight: 700;
+
+            a {
+                text-decoration: none;
+                color: $chalk;
+                border-bottom: none;
+
+                img {
+                    height: 2rem;
+                }
+            }
+        }
+    }
+}

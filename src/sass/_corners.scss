@@ -1,0 +1,7 @@
+@use "./settings/sizes";
+
+@each $sizeName, $size in sizes.$sizes {
+    .border-radius-#{$sizeName} {
+        border-radius: #{$size}rem;
+    }
+}

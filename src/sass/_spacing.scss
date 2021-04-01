@@ -1,0 +1,34 @@
+@use "./settings/sizes";
+
+$spacingProperties: (
+    "m": "margin",
+    "m-t": "margin-top",
+    "m-r": "margin-right",
+    "m-b": "margin-bottom",
+    "m-l": "margin-left",
+    "p": "padding",
+    "p-t": "padding-top",
+    "p-r": "padding-right",
+    "p-b": "padding-bottom",
+    "p-l": "padding-left",
+);
+
+@each $sizeName, $size in sizes.$sizes {
+    // Margin and padding classes
+    @each $name, $property in $spacingProperties {
+        .#{$name}-#{$sizeName} {
+            #{$property}: #{$size}rem;
+        }
+    }
+
+    // Gap classes (for flex layouts)
+    .gap-#{$sizeName} {
+        // Simulate gap: #{$size}rem;
+        margin: -#{$size}rem 0 0 -#{$size}rem;
+
+        > * {
+            margin: #{$size}rem 0 0 #{$size}rem;
+        }
+    }
+}
+

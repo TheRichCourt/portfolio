@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Test page</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="fill-viewport centre-content bg-red">
+            <div>
+                <h1>TheRichCourt Frontend</h1>
+                <p>The viewport should be full, and this content should be right in the centre.</p>
+            </div>
+        </header>
+
+        <div class="fill-viewport centre-content">
+            <article>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+
+                <p>
+                    Some paragraph text. Nothing too interesting. It should be nice and tight though - not too wide please!
+                </p>
+
+                <p>
+                    Some more paragraph text. Nothing too interesting. It should be nice and tight though - not too wide please! Now we know what two different paragraphs in a row looks like.
+                </p>
+            </article>
+        </div>
+
+        <div class="fill-viewport centre-content bg-blue">
+            <article class="inner p-4">
+                <h2>Flex Columns</h2>
+
+                <p><code>.flex</code> simply gives <code>display: flex;</code></p>
+
+                <p>Add spacing using <code>.gap-1</code>, <code>.gap-2</code> etc. <em>(although this uses margin on the element and its direct children, not the gap property which currently isn't supported in flex layouts in Safari 😶)</em>.</p>
+
+                <div class="flex gap-1 p-b-1">
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 1</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 2</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 3</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-1 p-b-1">
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 1</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 2</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-1">
+                    <div class="flex-1 bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 1</h3>
+
+                        <p>Some text inside this column. Just to fill the space, really.</p>
+                    </div>
+
+                    <div class="bg-chalk text-charcoal p-1 border-radius-quarter">
+                        <h3>Column 2</h3>
+
+                        <p>Some text inside this column.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="fill-viewport centre-content">
+            <article>
+                <h2>Spacing</h2>
+
+                <p>Spacing utility classes, including:</p>
+
+                <dl>
+                    <dt><code>.m-2</code></dt>
+                    <dd><code>margin: 2rem;</code></dd>
+
+                    <dt>.<code>p-b-4</code></dt>
+                    <dd><code>padding-bottom: 4rem;</code></dd>
+                </dl>
+
+                <p>etc.</p>
+
+                <div class="flex">
+                    <div class="bg-chalk text-charcoal p-4"><code>.p-4</code></div>
+                    <div class="bg-chalk text-charcoal m-4 p-1"><code>.m-4.p-1</code></div>
+                    <div class="bg-chalk text-charcoal p-r-1 p-l-1 p-t-4 p-b-4"><code>.p-r-1.p-l-1.p-t-4.p-b-4</code></div>
+                </div>
+            </article>
+        </div>
+
+        <div class="fill-viewport centre-content bg-yellow">
+            <article>
+                <h2>Code</h2>
+
+                <p>Sometimes it's nice to be able to display <code>someInlineCode();</code>. Other times, when there's more code to show, it's more useful to show a block of code. In that case, use <code>code.block</code>.</p>
+
+                <code class="block">writeBanana(() => {
+    const banana = ("b" + "a" + + "a" + "a").toLowerCase();
+
+    console.log(banana.charAt(0).toUpperCase() + banana.slice(1));
+});</code>
+            </article>
+        </div>
+
+        <div class="fill-viewport centre-content">
+            <div>
+                <h2>Rounded corners</h2>
+
+                <div class="bg-chalk text-charcoal p-1 border-radius-1">
+                    <p>
+                        Round the corners on elements, using <code>.border-radius-1</code>, <code>.border-radius-quarter</code> etc.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/dist/main.js"></script>
+    </body>
+</html>

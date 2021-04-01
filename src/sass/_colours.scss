@@ -1,0 +1,47 @@
+@import "./settings//colours";
+
+body {
+    background-color: $charcoal;
+    color: $chalk;
+}
+
+// @todo extract these colours as vars
+.bg-red {
+    background-image: linear-gradient(135deg, $red, $pink);
+}
+
+.bg-blue {
+    background-image: linear-gradient(135deg, $blue, $green);
+}
+
+.bg-yellow {
+    background-image: linear-gradient(135deg, $yellow, $orange);
+}
+
+.bg-charcoal {
+    background-color: $charcoal !important;
+}
+
+.bg-chalk {
+    background-color: $chalk !important;
+}
+
+.bg-glass {
+    background-color: rgba(33, 33, 33, .8);
+
+    @supports (backdrop-filter: blur(1rem)) {
+        backdrop-filter: blur(1rem);
+    }
+}
+
+.text-charcoal {
+    color: $charcoal;
+}
+
+.text-charcoal-lighter {
+    color: $charcoalLighter;
+}
+
+.text-chalk {
+    color: $chalk;
+}

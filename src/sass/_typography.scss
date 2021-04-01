@@ -1,0 +1,149 @@
+@import "./settings/colours";
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Samsung Sharp Sans Regular Regular'), url('../font/SamsungSharpSansRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('SamsungSharpSans-Bold'), url('../font/SamsungSharpSansBold.woff') format('woff');
+}
+
+::selection {
+    color: $chalk;
+    background-color: $pink;
+}
+
+html {
+    font-size: clamp(0.5vw, 16px, 10vw);
+    line-height: 1.3;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+
+    &.subtitle {
+        font-size: 2rem;
+        font-family: 'Sharp sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+dl,
+img {
+    margin: 0;
+}
+
+article {
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > p,
+    > ul,
+    > ol,
+    > dl,
+    > img {
+        // In articles, let's stick to a nice width
+        max-width: 30rem;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    transition: color .28s linear;
+    border-bottom: .125rem solid $red;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+article img {
+    display: block;
+}
+
+code {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    white-space: pre;
+    background-image: linear-gradient(0deg, $charcoal, $charcoalLighter);
+    color: $chalk;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    border-radius: .25rem;
+
+    &.block {
+        display: block;
+        padding: 1rem;
+    }
+}
+
+.text-align-centre {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
