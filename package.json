@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "stylelint ./src/sass/*.scss",
     "watch": "webpack watch --mode=development",
     "build-prod": "webpack --mode=production"
   },
@@ -27,6 +27,8 @@
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.5.0"
   }

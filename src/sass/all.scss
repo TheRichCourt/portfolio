@@ -1,6 +1,8 @@
 @import "~normalize.css";
 
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 @import "typography";
 @import "layout";
