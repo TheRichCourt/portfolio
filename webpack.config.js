@@ -1,6 +1,9 @@
 const path = require('path');
+const glob = require('glob');
+const globAll = require('glob-all');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isDev = argv.mode === 'development';
@@ -16,6 +19,13 @@ module.exports = (env, argv) => {
                 // Options similar to the same options in webpackOptions.output
                 // both options are optional
                 filename: '[name].bundle.css',
+            }),
+            new PurgeCSSPlugin({
+                paths: globAll.sync([
+                    './src/**/*.jsx',
+                    './src/**/*.js',
+                    './public/**/*.html'
+                ])
             }),
         ],
         module: {
