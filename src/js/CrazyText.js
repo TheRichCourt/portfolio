@@ -56,7 +56,7 @@ const CrazyText = props => {
                 {props.children.split(" ").map((word, wordIndex) => {
                     return (
                         <React.Fragment key={wordIndex}>
-                            <span>
+                            <span className="crazy-text-word">
                                 {word.split("").map((char, charIndex) => {
                                     return (
                                         <span

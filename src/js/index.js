@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Bubbles from "./Bubbles";
+import CrazyText from "./CrazyText";
 
 import "../sass/all.scss";
-import CrazyText from "./CrazyText";
 
 const bubblesRootElem = document.getElementById("bubbles");
 
@@ -15,6 +15,6 @@ ReactDOM.render(
 const crazyTextRootElem = document.getElementById("crazy_text");
 
 ReactDOM.render(
-    <CrazyText subtitle="Web Developer">Rich Court</CrazyText>,
+    <CrazyText subtitle="Web Developer">{"Rich Court"}</CrazyText>,
     crazyTextRootElem
 );

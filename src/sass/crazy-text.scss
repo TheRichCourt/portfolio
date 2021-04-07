@@ -4,6 +4,11 @@
     cursor: pointer;
 }
 
+.crazy-text-word {
+    // Ensure the text wraps properly
+    display: inline-block;
+}
+
 .crazy-text-letter {
     display: inline-block;
     transition: transform 1s ease, color 1s ease;
