@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
 @import "typography";
 @import "layout";
 @import "colours";

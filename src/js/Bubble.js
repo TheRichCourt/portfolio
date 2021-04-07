@@ -48,14 +48,16 @@ const Bubble = props => {
             yBounceTimeRef.current = now;
         }
 
-        setVectors({
-            // Move by the appropriate amount for the new velocity
-            position: {
-                x: vectors.position.x + vectors.velocity.x,
-                y: vectors.position.y + vectors.velocity.y,
-            },
-            velocity: newVelocity,
-        });
+        if (!window.matchMedia("(prefers-reduced-motion)").matches) {
+            setVectors({
+                // Move by the appropriate amount for the new velocity
+                position: {
+                    x: vectors.position.x + vectors.velocity.x,
+                    y: vectors.position.y + vectors.velocity.y,
+                },
+                velocity: newVelocity,
+            });
+        }
     });
 
     // We've been working from 0-100 to keep it somple, but need to better detect edges
