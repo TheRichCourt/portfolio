@@ -1,0 +1,10 @@
+.transitionable {
+    transition: transform .56s ease-out, opacity .28s ease-in;
+    transform-origin: top center;
+    perspective: 5rem;
+}
+
+.fade-out-down {
+    transform: translateY(1rem);
+    opacity: 0;
+}

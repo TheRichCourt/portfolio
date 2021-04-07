@@ -3,10 +3,18 @@ import ReactDOM from "react-dom";
 import Bubbles from "./Bubbles";
 
 import "../sass/all.scss";
+import CrazyText from "./CrazyText";
 
-const rootElem = document.getElementById("bubbles");
+const bubblesRootElem = document.getElementById("bubbles");
 
 ReactDOM.render(
     <Bubbles/>,
-    rootElem
+    bubblesRootElem
+);
+
+const crazyTextRootElem = document.getElementById("crazy_text");
+
+ReactDOM.render(
+    <CrazyText subtitle="Web Developer">Rich Court</CrazyText>,
+    crazyTextRootElem
 );

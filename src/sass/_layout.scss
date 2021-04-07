@@ -3,6 +3,19 @@ body {
     width: 100%;
 }
 
+// Because scroll-jacking doesn't feel nice in Chrome for Android, and possibly
+// Some other touch-based-device browsers
+@media (pointer: fine) {
+    html,
+    body {
+        scroll-snap-type: y proximity;
+    }
+
+    .snap-point {
+        scroll-snap-align: start;
+    }
+}
+
 main {
     width: 100%;
 }
