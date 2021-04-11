@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 
 const MAX_VELOCITY = .25;
 const MIN_VELOCITY = .15;
-const BUBBLE_WIDTH_REM = 8;
+const SMALL_BUBBLE_WIDTH_REM = 8;
+const LARGE_BUBBLE_WIDTH_REM = 12;
 const BOUNCE_IMMUNITY_TIME_MS = 500;
 
 const Bubble = props => {
@@ -60,10 +61,15 @@ const Bubble = props => {
         }
     });
 
+    const bubbleWidthRem = window.matchMedia("screen and (max-width: 1024px)").matches
+        ? SMALL_BUBBLE_WIDTH_REM
+        : LARGE_BUBBLE_WIDTH_REM
+    ;
+
     // We've been working from 0-100 to keep it somple, but need to better detect edges
     const remAdjustment = {
-        x: BUBBLE_WIDTH_REM * (vectors.position.x / 100),
-        y: BUBBLE_WIDTH_REM * (vectors.position.y / 100)
+        x: bubbleWidthRem * (vectors.position.x / 100),
+        y: bubbleWidthRem * (vectors.position.y / 100)
     };
 
     const translateX = `translateX(calc(${vectors.position.x}vw - ${remAdjustment.x}rem))`;

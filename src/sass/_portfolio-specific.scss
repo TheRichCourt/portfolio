@@ -4,3 +4,19 @@
     border-radius: 50%;
     border: 1rem rgba(0, 0, 0, .2) solid;
 }
+
+.bg-red-map-fareham {
+    background-image: linear-gradient(135deg, rgba(189, 73, 50, .75), rgba(188, 50, 124, .75)), url("https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/[-1.3066,50.7638,-1.0373,50.9338]/1280x1280?access_token=pk.eyJ1IjoidGhlcmljaGNvdXJ0IiwiYSI6ImNqdDMwdW1zNjFrZnQ0YXF0ZDU3MDIzdGoifQ.ZweulZXFgeSuZ9HZ6WrpTw");
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-blue-code {
+    background-image: linear-gradient(135deg,rgb(50 168 189 / 75%),rgb(50 188 110 / 75%)), url("../images/code.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-yellow-translucent {
+    background-image: linear-gradient(135deg, rgba(219, 164, 58, .75), rgba(216, 58, 69, .75));
+}

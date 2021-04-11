@@ -17,7 +17,7 @@ $spacingProperties: (
     // Margin and padding classes
     @each $name, $property in $spacingProperties {
         .#{$name}-#{$sizeName} {
-            #{$property}: #{$size}rem;
+            #{$property}: #{$size}rem !important;
         }
     }
 

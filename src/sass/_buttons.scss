@@ -13,6 +13,7 @@ a.button {
     height: 2.5rem;
     overflow: hidden;
     border: 1px $charcoalLighter solid;
+    text-transform: uppercase;
 
     &::before {
         content: "";

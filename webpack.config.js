@@ -8,7 +8,7 @@ const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 module.exports = (env, argv) => {
     const isDev = argv.mode === 'development';
 
-    return {
+    const config = {
         entry: './src/js/index.js',
         output: {
             filename: '[name].bundle.js',
@@ -19,13 +19,6 @@ module.exports = (env, argv) => {
                 // Options similar to the same options in webpackOptions.output
                 // both options are optional
                 filename: '[name].bundle.css',
-            }),
-            new PurgeCSSPlugin({
-                paths: globAll.sync([
-                    './src/**/*.jsx',
-                    './src/**/*.js',
-                    './public/**/*.html'
-                ])
             }),
         ],
         module: {
@@ -48,7 +41,7 @@ module.exports = (env, argv) => {
                     ],
                 },
                 {
-                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                    test: /\.(woff(2)?|ttf|eot|svg|jpg)(\?v=\d+\.\d+\.\d+)?$/,
                     type: 'asset/resource'
                 },
             ],
@@ -61,4 +54,19 @@ module.exports = (env, argv) => {
             ],
         },
     };
+
+    // Don't purge in dev - this keeps it possible to change class names in the inspector and see instant results
+    if (!isDev) {
+        config.plugins.push(
+            new PurgeCSSPlugin({
+                paths: globAll.sync([
+                    './src/**/*.jsx',
+                    './src/**/*.js',
+                    './public/**/*.html'
+                ])
+            })
+        );
+    }
+
+    return config;
 };

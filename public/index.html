@@ -24,7 +24,7 @@
     </head>
 
     <body>
-        <header class="fill-viewport centre-content p-2 snap-point">
+        <header class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 snap-point">
             <nav>
                 <ul>
                     <li><a href="/"><img src="/images/rc_logo.svg" alt="TheRichCourt Logo: the initials 'RC' in red and pink"/></a></li>
@@ -55,7 +55,7 @@
         </header>
 
         <main>
-            <section class="fill-viewport centre-content p-2 bg-red snap-point">
+            <section class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-red-map-fareham snap-point">
                 <div class="flex gap-2 middle p-2">
                     <article class="flex-1">
                         <h2>About Me</h2>
@@ -69,13 +69,13 @@
                 </div>
             </section>
 
-            <section class="fill-viewport centre-content p-2 relative snap-point">
+            <section class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-yellow-translucent relative snap-point">
                 <div id="bubbles">
                     <noscript>You'll need to enable JavaScript to view this content.</noscript>
                 </div>
 
                 <div class="flex">
-                    <article class="flex-1 bg-glass p-2 border-radius-half">
+                    <article class="flex-1 p-2 border-radius-half">
                         <h2>Skills</h2>
 
                         <p>I'm a fast learner, and love getting stuck in to new technologies. I've been working in <strong>Symfony</strong> / <strong>PHP</strong> for years, and in the last year I've started building in <strong>React</strong>.</p>
@@ -84,17 +84,19 @@
                 </div>
             </section>
 
-            <section class="fill-viewport centre-content p-2 bg-yellow snap-point">
+            <section class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-blue-code snap-point">
                 <div>
                     <h2 class="m-b-1">My Work</h2>
 
                     <div class="flex gap-2">
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-quarter">
+                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>Translations Testing Bundle</h3>
 
-                            <img src="/images/projects/translations-testing-bundle-screenshot.png" alt="Screenshot of the Translations Testing Bundle page"/>
+                            <img class="border-radius-half" src="/images/projects/translations-testing-bundle-screenshot.png" alt="Screenshot of the Translations Testing Bundle page"/>
 
-                            <p>A Symfony bundle, which provides a page in your application to input translation keys and arguments and instantly see the translation results. Useful for testing / debugging ICU based translations with multiple arguments, without having to change the state of your application for each variant, or hunt down the page which uses the translation.</p>
+                            <p>A good example of my work in Symfony. I wanted a way to very quickly debug translations without having to hunt down where they're used in the application, or alter the application's state so that various different arguments are passed to the translation.</p>
+
+                            <p>So, I developed this bundle.</p>
 
                             <a
                                 class="button"
@@ -107,12 +109,12 @@
                             </a>
                         </article>
 
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-quarter">
+                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>Joomla Extensions</h3>
 
-                            <img src="/images/projects/joomla.jpg" alt="Screenshots of various Joomla extensions I developed, shown on laptops in a V formation, with the Joomla logo in the background"/>
+                            <img class="border-radius-half" src="/images/projects/joomla.jpg" alt="Screenshots of various Joomla extensions I developed, shown on laptops in a V formation, with the Joomla logo in the background"/>
 
-                            <p>A small selection of Joomla extensions, developed many years ago, which are still downloaded hundreds of times a week.</p>
+                            <p>A small selection of Joomla extensions, first developed many years ago, which are still downloaded hundreds of times a week.</p>
 
                             <p><a href="https://therichcourt.com/joomla/gallery" target="_blank" rel="nofollow noopener">RC Gallery</a> is particularly popular, and I sell a range of add-ons to go with it.</p>
 
@@ -126,9 +128,56 @@
                             </a>
                         </article>
                     </div>
+
+                    <div class="flex gap-2 m-t-0">
+                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
+                            <h3>SeeTheWorld</h3>
+
+                            <img class="border-radius-half" src="/images/projects/seetheworld.jpg" alt="Screenshot of SeeMallorca.com, a SeeTheWorld website"/>
+
+                            <p>
+                                I've been working at <a href="https://www.seetheworld.com" target="_blank" rel="nofollow noopener">SeeTheWorld</a> as a full-stack developer since 2018. Among many other things, I've
+                                migrated the codebase from PHP 5 to 7.4,
+                                converted a large existing framework-less application to Symfony 4 (and then 5),
+                                and integrated various third party frontend and backend libraries & services, including React, Redux, Webpack, Google Maps, Mapbox, CloudImage, Dexi, MJML and loads more.
+                            </p>
+
+                            <a
+                                class="button"
+                                href="https://www.seetheworld.com"
+                                target="_blank"
+                                rel="nofollow noopener"
+                            >
+                                Go to SeeTheWorld.com
+                            </a>
+                        </article>
+
+                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
+                            <h3>Games</h3>
+
+                            <img class="border-radius-half" src="/images/projects/ball-thing.png" alt="Screenshot from Ball Thing, a game by Rich Court"/>
+
+                            <p>I really enjoy making games. I've released a handfull of mobile games (Android-only for now), and have also taken part in several game jams, producing some quirky games in less than 48hrs each.</p>
+
+                            <p>All of my games (so far) are built using the Unity game engine, and C#.</p>
+
+                            <a
+                                class="button"
+                                href="https://therichcourt.com/games/"
+                                target="_blank"
+                                rel="nofollow noopener"
+                            >
+                                Check out my games
+                            </a>
+                        </article>
+                    </div>
                 </div>
             </section>
         </main>
+
+        <footer class="centre-content p-4">
+            <p>Made in the UK <img src="/images/uk.svg" height="14px"> | All content copyright Rich Court 2015 - 2021.</p>
+        </footer>
 
         <script src="/build/main.bundle.js" defer></script>
     </body>
