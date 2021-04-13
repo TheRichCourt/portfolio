@@ -24,6 +24,7 @@ module.exports = (env, argv) => {
                 template: './src/index.html',
                 filename: '../index.html',
                 hash: true,
+                minify: !isDev,
             })
         ],
         module: {
