@@ -18,7 +18,6 @@
         <meta name="theme-color" content="#212121">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -68,7 +67,15 @@
                     </article>
 
                     <div class="flex-1">
-                        <img class="profile-picture" src="/images/me.jpg" alt="A picture of me, covered in mud standing next to my bike after a race"/>
+                        <picture>
+                            <source media="(min-resolution: 144dpi)" srcset="/images/me-960.jpg">
+                            <source media="(max-resolution: 143dpi)" srcset="/images/me-480.jpg">
+                            <img
+                                class="ratio-16-9 profile-picture"
+                                src="/images/me-480.jpg"
+                                alt="A picture of me, covered in mud standing next to my bike after a race"
+                            />
+                        </picture>
                     </div>
                 </div>
             </section>
@@ -113,7 +120,15 @@
                         <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>Translations Testing Bundle</h3>
 
-                            <img class="border-radius-half" src="/images/projects/translations-testing-bundle-screenshot.png" alt="Screenshot of the Translations Testing Bundle page"/>
+                            <picture class="ratio-16-9">
+                                <source media="(min-resolution: 144dpi)" srcset="/images/projects/translations-testing-bundle-screenshot-960.jpg">
+                                <source media="(max-resolution: 143dpi)" srcset="/images/projects/translations-testing-bundle-screenshot-480.jpg">
+                                <img
+                                    class="border-radius-half"
+                                    src="/images/projects/translations-testing-bundle-screenshot-480.jpg"
+                                    alt="Screenshot of the Translations Testing Bundle page"
+                                >
+                            </picture>
 
                             <p>A good example of my work in <strong>Symfony</strong>. I wanted a way to very quickly debug translations without having to hunt down where they're used in the application, or alter the application's state so that various different arguments are passed to the translation.</p>
 
@@ -133,7 +148,15 @@
                         <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>Joomla Extensions</h3>
 
-                            <img class="border-radius-half" src="/images/projects/joomla.jpg" alt="Screenshots of various Joomla extensions I developed, shown on laptops in a V formation, with the Joomla logo in the background"/>
+                            <picture class="ratio-16-9">
+                                <source media="(min-resolution: 144dpi)" srcset="/images/projects/joomla-960.jpg">
+                                <source media="(max-resolution: 143dpi)" srcset="/images/projects/joomla-480.jpg">
+                                <img
+                                    class="border-radius-half"
+                                    src="/images/projects/joomla-480.jpg"
+                                    alt="Screenshots of various Joomla extensions I developed, shown on laptops in a V formation, with the Joomla logo in the background"
+                                />
+                            </picture>
 
                             <p>A small selection of <strong>Joomla</strong> extensions, first developed many years ago, which are still downloaded hundreds of times a week.</p>
 
@@ -156,7 +179,15 @@
                         <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>SeeTheWorld</h3>
 
-                            <img class="border-radius-half" src="/images/projects/seetheworld.jpg" alt="Screenshot of SeeMallorca.com, a SeeTheWorld website"/>
+                            <picture class="ratio-16-9">
+                                <source media="(min-resolution: 144dpi)" srcset="/images/projects/seetheworld-960.jpg">
+                                <source media="(max-resolution: 143dpi)" srcset="/images/projects/seetheworld-480.jpg">
+                                <img
+                                    class="border-radius-half"
+                                    src="/images/projects/seetheworld-480.jpg"
+                                    alt="SeeTheWorld's logo with a tropical island in the background"
+                                />
+                            </picture>
 
                             <p>
                                 I've been working at <a href="https://www.seetheworld.com" target="_blank" rel="nofollow noopener">SeeTheWorld</a> as a <strong>full stack</strong> developer since 2018. Among many other things, I've
@@ -178,7 +209,15 @@
                         <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
                             <h3>Games</h3>
 
-                            <img class="border-radius-half" src="/images/projects/ball-thing.png" alt="Screenshot from Ball Thing, a game by Rich Court"/>
+                            <picture class="ratio-16-9">
+                                <source media="(min-resolution: 144dpi)" srcset="/images/projects/ball-thing-960.jpg">
+                                <source media="(max-resolution: 143dpi)" srcset="/images/projects/ball-thing-480.jpg">
+                                <img
+                                    class="border-radius-half"
+                                    src="/images/projects/ball-thing-480.jpg"
+                                    alt="Screenshot from Ball Thing, a game by Rich Court"
+                                />
+                            </picture>
 
                             <p>I really enjoy making games. I've released a handful of mobile games (Android-only for now), and have also taken part in several game jams, producing some quirky games in less than 48hrs each.</p>
 

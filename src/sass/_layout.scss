@@ -52,3 +52,21 @@ ul.flat-list {
     list-style: none;
     padding-left: 0;
 }
+
+// @todo fallback for where this isn't supported!
+.ratio-16-9 img {
+    object-fit: cover;
+
+    @supports (aspect-ratio: 16 / 9) {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+// @todo fallback for where this isn't supported!
+.ratio-1-1 img {
+    object-fit: cover;
+
+    @supports (aspect-ratio: 1 / 1) {
+        aspect-ratio: 1 / 1;
+    }
+}
