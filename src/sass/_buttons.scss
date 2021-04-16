@@ -4,15 +4,15 @@ a.button {
     display: inline-flex;
     position: relative;
     align-items: center;
-    background-color: $chalk;
+    background-image: linear-gradient(135deg, $red, $pink);
     text-decoration: none;
-    padding: .5rem 1rem;
+    padding: 1.5rem 1rem;
     border-radius: .25rem;
     font-weight: 700;
-    color: $charcoal;
+    color: $chalk;
     height: 2.5rem;
     overflow: hidden;
-    border: 1px $charcoalLighter solid;
+    border: none;
     text-transform: uppercase;
 
     &::before {
@@ -22,7 +22,7 @@ a.button {
         height: 0;
         top: 50%;
         left: 50%;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(255, 255, 255, 0);
         background-image: none;
         border-radius: 100%;
         transition: width .14s ease, height .14s ease, top .14s ease, left .14s ease, background-color .14s ease;
@@ -36,12 +36,13 @@ a.button {
             top: 0;
             left: 0;
             border-radius: 0;
-            background-color: rgba(0, 0, 0, .1);
+            background-color: rgba(255, 255, 255, .1);
             transition: width .28s ease, height .28s ease, top .28s ease, left .28s ease, background-color .28s ease;
         }
     }
 
-    img {
+    img,
+    svg {
         height: 1.5rem;
         margin-right: .5rem;
     }
