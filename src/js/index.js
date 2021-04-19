@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import Bubbles from "./Bubbles";
 import CrazyText from "./CrazyText";
 
+import "../index.html";
+
 import "../sass/all.scss";
 
 const bubblesRootElem = document.getElementById("bubbles");

@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
         entry: './src/js/index.js',
         output: {
             filename: '[name].bundle.js',
-            path: path.resolve(__dirname, 'public/build'),
+            path: path.resolve(__dirname, 'public'),
         },
         plugins: [
             new MiniCssExtractPlugin({
@@ -22,7 +22,6 @@ module.exports = (env, argv) => {
             }),
             new HtmlWebpackPlugin({
                 template: './src/index.html',
-                filename: '../index.html',
                 hash: true,
                 minify: !isDev,
             })
@@ -49,6 +48,10 @@ module.exports = (env, argv) => {
                 {
                     test: /\.(woff(2)?|ttf|eot|svg|jpg)(\?v=\d+\.\d+\.\d+)?$/,
                     type: 'asset/resource'
+                },
+                {
+                    test: /\.html$/i,
+                    loader: 'html-loader',
                 },
             ],
         },
