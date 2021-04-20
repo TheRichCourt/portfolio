@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Bubbles from "./Bubbles";
 import CrazyText from "./CrazyText";
+import './lazy-images';
 
 import "../index.html";
 

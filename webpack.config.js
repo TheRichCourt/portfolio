@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackBase64ImagePlugin = require('html-webpack-base64-image-plugin');
 
 module.exports = (env, argv) => {
     const isDev = argv.mode === 'development';
@@ -24,7 +25,13 @@ module.exports = (env, argv) => {
                 template: './src/index.html',
                 hash: true,
                 minify: !isDev,
-            })
+            }),
+            new HtmlWebpackBase64ImagePlugin({
+                eager: true,
+                altSourceAttributeName: 'data-src',
+                size: 16,
+                additionalClass: 'lazyloading',
+            }),
         ],
         module: {
             rules: [

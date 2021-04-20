@@ -22,6 +22,7 @@
     "file-loader": "^6.2.0",
     "glob-all": "^3.2.1",
     "html-loader": "^2.1.2",
+    "html-webpack-base64-image-plugin": "git+https://github.com/TheRichCourt/html-webpack-base64-image-plugin.git",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.0",
     "normalize.css": "^8.0.1",

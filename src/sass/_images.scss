@@ -1,0 +1,12 @@
+.image-container {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.lazyloading {
+    filter: blur(10px);
+}
+
+.lazyloaded {
+    transition: filter .28s ease;
+}
