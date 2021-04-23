@@ -54,8 +54,10 @@ ul.flat-list {
 }
 
 // @todo fallback for where this isn't supported!
-img.ratio-16-9 {
-    object-fit: cover;
+.ratio-16-9 {
+    img {
+        object-fit: cover;
+    }
 
     @supports (aspect-ratio: 16 / 9) {
         aspect-ratio: 16 / 9;
@@ -63,8 +65,10 @@ img.ratio-16-9 {
 }
 
 // @todo fallback for where this isn't supported!
-img.ratio-1-1 {
-    object-fit: cover;
+.ratio-1-1 {
+    img {
+        object-fit: cover;
+    }
 
     @supports (aspect-ratio: 1 / 1) {
         aspect-ratio: 1 / 1;

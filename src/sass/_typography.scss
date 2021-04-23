@@ -99,6 +99,7 @@ article {
     > ol,
     > dl,
     > img,
+    > .image-container,
     > picture > img {
         // In articles, let's stick to a nice width
         max-width: 30rem;

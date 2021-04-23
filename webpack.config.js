@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
                 eager: true,
                 altSourceAttributeName: 'data-src',
                 size: 16,
-                additionalClass: 'lazyloading',
+                additionalClass: 'lazyload',
             }),
         ],
         module: {

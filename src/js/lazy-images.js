@@ -2,7 +2,7 @@ const observer = new IntersectionObserver(
     entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (entry.target.classList.contains("lazyloading")) {
+                if (entry.target.classList.contains("lazyload")) {
                     loadThenDisplayImage(entry.target);
                 }
             }
@@ -16,18 +16,20 @@ const observer = new IntersectionObserver(
 );
 
 const loadThenDisplayImage = (imageElem) => {
+    observer.unobserve(imageElem);
+
     const fullImageSrc = imageElem.getAttribute('data-src');
     const tempImage = document.createElement('img');
 
     tempImage.onload = () => {
         imageElem.src = fullImageSrc;
-        imageElem.classList.remove("lazyloading");
+        imageElem.classList.remove("lazyload");
         imageElem.classList.add("lazyloaded");
     };
 
     tempImage.src = fullImageSrc;
 };
 
-document.querySelectorAll("img.lazyloading").forEach(elem => {
+document.querySelectorAll("img.lazyload").forEach(elem => {
     observer.observe(elem);
 });
