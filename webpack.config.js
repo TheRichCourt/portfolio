@@ -33,6 +33,15 @@ module.exports = (env, argv) => {
                 additionalClass: 'lazyload',
             }),
         ],
+        resolve: {
+            alias: {
+                // Use Preact instead of React
+                react: "preact/compat",
+                "react-dom/test-utils": "preact/test-utils",
+                // Must be below test-utils
+                "react-dom": "preact/compat",
+            },
+        },
         module: {
             rules: [
                 {
