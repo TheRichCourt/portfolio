@@ -26,30 +26,30 @@ const Bubble = props => {
     const xBounceTimeRef = useRef(0);
     const yBounceTimeRef = useRef(0);
 
-    window.requestAnimationFrame(() => {
-        const newVelocity = {...vectors.velocity};
-        const now = new Date().getTime();
+    if (props.isAnimating && !window.matchMedia("(prefers-reduced-motion)").matches) {
+        window.requestAnimationFrame(() => {
+            const newVelocity = {...vectors.velocity};
+            const now = new Date().getTime();
 
-        // Detect bounces
-        if (
-            now >= xBounceTimeRef.current + BOUNCE_IMMUNITY_TIME_MS
-            && (vectors.position.x >= 100 || vectors.position.x <= 0)
-        ) {
-            newVelocity.x = 0 - vectors.velocity.x;
+            // Detect bounces
+            if (
+                now >= xBounceTimeRef.current + BOUNCE_IMMUNITY_TIME_MS
+                && (vectors.position.x >= 100 || vectors.position.x <= 0)
+            ) {
+                newVelocity.x = 0 - vectors.velocity.x;
 
-            xBounceTimeRef.current = now;
-        }
+                xBounceTimeRef.current = now;
+            }
 
-        if (
-            now >= yBounceTimeRef.current + BOUNCE_IMMUNITY_TIME_MS
-            && (vectors.position.y >= 100 || vectors.position.y <= 0)
-        ) {
-            newVelocity.y = 0 - vectors.velocity.y;
+            if (
+                now >= yBounceTimeRef.current + BOUNCE_IMMUNITY_TIME_MS
+                && (vectors.position.y >= 100 || vectors.position.y <= 0)
+            ) {
+                newVelocity.y = 0 - vectors.velocity.y;
 
-            yBounceTimeRef.current = now;
-        }
+                yBounceTimeRef.current = now;
+            }
 
-        if (!window.matchMedia("(prefers-reduced-motion)").matches) {
             setVectors({
                 // Move by the appropriate amount for the new velocity
                 position: {
@@ -58,8 +58,8 @@ const Bubble = props => {
                 },
                 velocity: newVelocity,
             });
-        }
-    });
+        });
+    }
 
     const bubbleWidthRem = window.matchMedia("screen and (max-width: 1024px)").matches
         ? SMALL_BUBBLE_WIDTH_REM
@@ -99,6 +99,7 @@ const Bubble = props => {
 Bubble.propTypes = {
     name: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
+    isAnimating: PropTypes.bool,
 };
 
 export default Bubble;

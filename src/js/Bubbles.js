@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Bubble from "./Bubble";
 
 import "../sass/bubbles.scss";
@@ -16,19 +16,34 @@ import CSSLogo from "../images/skill-logos/css3.svg";
 import HTMLLogo from "../images/skill-logos/html5.svg";
 
 const Bubbles = () => {
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        const bubblesSectionElem = document.getElementById("bubbles_section");
+
+        new IntersectionObserver(
+            entries => setIsAnimating(entries[0].isIntersecting),
+            {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0,
+            }
+        ).observe(bubblesSectionElem);
+    }, []);
+
     return (
         <div className="bubbles-container">
-            <Bubble name="Joomla" src={JoomlaLogo}/>
-            <Bubble name="Unity" src={UnityLogo}/>
-            <Bubble name="SASS" src={SASSLogo}/>
-            <Bubble name="Redux" src={ReduxLogo}/>
-            <Bubble name="React" src={ReactLogo}/>
-            <Bubble name="Symfony" src={SymfonyLogo}/>
-            <Bubble name="MySQL" src={MySQLLogo}/>
-            <Bubble name="PHP" src={PHPLogo}/>
-            <Bubble name="JavaScript" src={JavaScriptLogo}/>
-            <Bubble name="CSS" src={CSSLogo}/>
-            <Bubble name="HTML" src={HTMLLogo}/>
+            <Bubble isAnimating={isAnimating} name="Joomla" src={JoomlaLogo}/>
+            <Bubble isAnimating={isAnimating} name="Unity" src={UnityLogo}/>
+            <Bubble isAnimating={isAnimating} name="SASS" src={SASSLogo}/>
+            <Bubble isAnimating={isAnimating} name="Redux" src={ReduxLogo}/>
+            <Bubble isAnimating={isAnimating} name="React" src={ReactLogo}/>
+            <Bubble isAnimating={isAnimating} name="Symfony" src={SymfonyLogo}/>
+            <Bubble isAnimating={isAnimating} name="MySQL" src={MySQLLogo}/>
+            <Bubble isAnimating={isAnimating} name="PHP" src={PHPLogo}/>
+            <Bubble isAnimating={isAnimating} name="JavaScript" src={JavaScriptLogo}/>
+            <Bubble isAnimating={isAnimating} name="CSS" src={CSSLogo}/>
+            <Bubble isAnimating={isAnimating} name="HTML" src={HTMLLogo}/>
         </div>
     );
 };
