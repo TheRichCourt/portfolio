@@ -21,13 +21,8 @@ $spacingProperties: (
         }
     }
 
-    // Gap classes (for flex layouts)
+    // Gap classes (for flex / grid layouts)
     .gap-#{$sizeName} {
-        // Simulate gap: #{$size}rem;
-        margin: -#{$size}rem 0 0 -#{$size}rem;
-
-        > * {
-            margin: #{$size}rem 0 0 #{$size}rem;
-        }
+        gap: #{$size}rem;
     }
 }

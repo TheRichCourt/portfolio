@@ -12,8 +12,11 @@ nav {
         li {
             display: inline-block;
             padding: 1rem;
-            font-family: 'Sharp Sans', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
             font-weight: 700;
+
+            @media (min-width: 1024px) {
+                padding: 2rem;
+            }
 
             a {
                 text-decoration: none;

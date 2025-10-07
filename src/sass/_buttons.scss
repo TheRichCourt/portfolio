@@ -8,12 +8,10 @@ a.button {
     text-decoration: none;
     padding: 1.5rem 1rem;
     border-radius: .25rem;
-    font-weight: 700;
     color: $chalk;
     height: 2.5rem;
     overflow: hidden;
     border: none;
-    text-transform: uppercase;
 
     &::before {
         content: "";

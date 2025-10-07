@@ -18,6 +18,6 @@ ReactDOM.render(
 const crazyTextRootElem = document.getElementById("crazy_text");
 
 ReactDOM.render(
-    <CrazyText subtitle="Web Developer">{"Rich Court"}</CrazyText>,
+    <CrazyText subtitle="Developer">{"Rich Court"}</CrazyText>,
     crazyTextRootElem
 );

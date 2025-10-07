@@ -37,6 +37,10 @@ main {
 
     @media only screen and (max-width: 1024px) {
         flex-direction: column;
+
+        &.row {
+            flex-direction: row;
+        }
     }
 
     &.middle {

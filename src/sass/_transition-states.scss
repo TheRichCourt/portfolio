@@ -4,7 +4,21 @@
     perspective: 5rem;
 }
 
+.fade-out {
+    opacity: 0 !important;
+}
+
 .fade-out-down {
     transform: translateY(1rem);
-    opacity: 0;
+    opacity: 0 !important;
+}
+
+.fade-out-and-shrink {
+    transform: scale(.5);
+    opacity: 0 !important;
+}
+
+.fade-out-down-and-shrink {
+    transform: translateY(2rem) scale(.5);
+    opacity: 0 !important;
 }

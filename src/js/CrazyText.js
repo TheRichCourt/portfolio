@@ -76,7 +76,7 @@ const CrazyText = props => {
                 })}
             </h1>
 
-            <p onClick={() => setLength(0)} className={`subtitle ${showSubtitle ? "transitionable" : "fade-out-down"}`}>
+            <p onClick={() => setLength(0)} className={`subtitle role ${showSubtitle ? "transitionable" : "fade-out"}`}>
                 {props.subtitle}
             </p>
         </div>

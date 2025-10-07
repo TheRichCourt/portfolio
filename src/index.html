@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
         <title>Rich Court Portfolio</title>
-        <meta name="description" content="Hi, my name's Rich Court. I'm a software developer, designer, part-time student and hobbyist game developer, based in Fareham on the south coast of England.">
+        <meta name="description" content="The offical portfolio site of Rich Court">
 
         <link rel="canonical" href="https://portfolio.therichcourt.com">
 
@@ -17,8 +17,9 @@
         <meta name="msapplication-TileColor" content="#00aba9">
         <meta name="theme-color" content="#212121">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -52,12 +53,12 @@
                         </a>
                     </li>
 
-                    <li><a href="https://therichcourt.com/games">Games 🕹️</a></li>
-                    <li><a href="https://therichcourt.com/joomla">Joomla</a></li>
+                    <!-- <li><a href="https://therichcourt.com/games">Games 🕹️</a></li>
+                    <li><a href="https://therichcourt.com/joomla">Joomla</a></li> -->
                 </ul>
             </nav>
 
-            <div id="animated_logo">
+            <!-- <div id="animated_logo">
                 <svg
                     width="800"
                     height="500"
@@ -69,7 +70,7 @@
                     <path d="M146.614 218.452H95V76.5652L151.269 77.1724C203.49 77.7796 210.483 76.459 231.869 89.0345C231.869 89.0345 262.553 101.61 264.565 147.408C266.577 193.205 231.625 208.13 231.625 208.13C212.801 217.238 202.478 218.452 146.614 218.452Z"/>
                     <path d="M251.663 499.393H155.924V439.683L95 428.069V295.367H142.363C193.775 295.367 210.777 297.593 229.601 306.297C248.829 315.405 263.491 334.03 267.046 357.911C270.601 381.791 268.086 419.014 272.106 433.611C276.126 448.207 285.667 467.413 293.764 475.509C302.669 484.617 322.91 493.726 336.674 495.143C342.948 495.75 348.066 499.393 348.066 499.393C348.066 500.405 251.663 499.393 251.663 499.393Z"/>
                 </svg>
-            </div>
+            </div> -->
 
             <div id="crazy_text" class="text-align-centre">
                 <noscript>
@@ -81,9 +82,9 @@
 
         <main>
             <section class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-red-map-fareham snap-point">
-                <div class="flex gap-2 middle p-2">
-                    <article class="flex-1">
-                        <h2>About Me</h2>
+                <div class="flex gap-2 middle inner">
+                    <article id="about-me" class="flex-1">
+                        <h2>Me</h2>
 
                         <ul class="flat-list">
                             <li class="m-b-1">🌍 Full Stack Web Developer</li>
@@ -91,14 +92,14 @@
                             <li class="m-b-1">🚴 Mountain Biker</li>
                         </ul>
 
-                        <p>Based in Fareham on the south coast of England, I have more than 12 years experience of designing and building web applications, games and other software.</p>
+                        <p>More than 12 years experience of designing and building web applications, games and other software.</p>
                     </article>
 
                     <div class="flex-1">
                         <div class="image-container">
                             <img
                                 class="ratio-1-1 profile-picture"
-                                src="./images/me-960.jpg"
+                                src="./images/me.jpg"
                                 alt="A picture of me, covered in mud standing next to my bike after a race"
                             />
                         </div>
@@ -106,18 +107,20 @@
                 </div>
             </section>
 
-            <section id="bubbles_section" class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-yellow-translucent relative snap-point">
+            <section id="bubbles_section" class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-yellow-translucent relative snap-point text-align-centre">
                 <div id="bubbles">
                     <noscript>
                         <ul class="flat-list">
                             <li>✔ HTML</li>
                             <li>✔ CSS</li>
                             <li>✔ JavaScript</li>
+                            <li>✔ TypeScript</li>
                             <li>✔ PHP</li>
                             <li>✔ MySQL</li>
                             <li>✔ Symfony</li>
                             <li>✔ React</li>
                             <li>✔ Redux</li>
+                            <li>✔ Svelte</li>
                             <li>✔ SASS</li>
                             <li>✔ Unity</li>
                             <li>✔ Joomla</li>
@@ -126,138 +129,278 @@
                 </div>
 
                 <div class="flex">
-                    <article class="flex-1 p-2 border-radius-half">
+                    <article class="flex-1 border-radius-half">
                         <h2>Skills</h2>
 
                         <p>I'm a fast learner, and really love getting stuck in to new technologies.</p>
 
-                        <p>I've been writing <strong>PHP</strong> and <strong>JavaScript</strong> for years, but I've also worked with C# and VB, and a little Java.</p>
+                        <p>I've been writing <strong>PHP</strong>, <strong>JavaScript</strong> and <strong>TypeScript</strong> for years, but I've also worked with C# (for game development) and VB, plus a little Java and Dart (for a Flutter app).</p>
 
-                        <p>In recent years I've been working with <strong>Symfony</strong> and <strong>React</strong>.</p>
+                        <p>In recent years I've been building web apps and APIs with <strong>Symfony</strong>.</p>
                     </article>
                 </div>
             </section>
 
-            <section class="fill-viewport centre-content p-t-4 p-b-4 p-l-2 p-r-2 bg-blue-code snap-point">
+            <section class="fill-viewport centre-content p-t-8 p-b-4 snap-point text-align-centre">
                 <div>
-                    <h2 class="m-b-1">My Work</h2>
+                    <h2 class="m-b-1">Work</h2>
+                    <p class="m-b-8 p-l-1 p-r-1">Most of my work is in private repositories, but here's a selection that you can see online.</p>
 
-                    <div class="flex gap-2">
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
-                            <h3>Translations Testing Bundle</h3>
-
+                    <div id="my-work">
+                        <article class="inner">
                             <div class="image-container">
                                 <img
+                                    width="1600"
+                                    height="900"
+                                    class="ratio-16-9"
+                                    src="./images/projects/stw-for-portfolio.png"
+                                    alt="See the World's logo with a tropical island in the background"
+                                >
+                            </div>
+
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>See the World</h3>
+
+                                    <p class="role">Senior developer</p>
+
+                                    <div class="tech">
+                                        <span>PHP</span>
+                                        <span>Symfony</span>
+                                        <span>TypeScript</span>
+                                        <span>SASS</span>
+                                        <span>Svelte</span>
+                                        <span>React</span>
+                                        <span>Webpack</span>
+                                        <span>Docker</span>
+                                        <span>MySQL</span>
+                                    </div>
+
+                                    <p>See the World is a collection of travel guides and a booking platform, for a mix of ski and summer destinations.</p>
+
+                                    <p>Check out a couple of examples:</p>
+
+                                    <div class="flex row gap-1">
+                                        <a
+                                            class="button"
+                                            href="https://www.seechamonix.com"
+                                            target="_blank"
+                                            rel="nofollow noopener"
+                                        >
+                                            Chamonix
+                                        </a>
+
+                                        <a
+                                            class="button"
+                                            href="https://www.seemallorca.com"
+                                            target="_blank"
+                                            rel="nofollow noopener"
+                                        >
+                                            Mallorca
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="inner">
+                            <div class="image-container">
+                                <img
+                                    width="1600"
+                                    height="900"
                                     class="ratio-16-9"
                                     src="./images/projects/translations-testing-bundle-screenshot-960.jpg"
                                     alt="Screenshot of the Translations Testing Bundle page"
                                 >
                             </div>
 
-                            <p>A good example of my work in <strong>Symfony</strong>. I wanted a way to very quickly debug translations without having to hunt down where they're used in the application, or alter the application's state so that various different arguments are passed to the translation.</p>
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>Translations Testing Bundle</h3>
 
-                            <p>So, I developed this bundle.</p>
+                                    <p class="role">Open source project</p>
 
-                            <a
-                                class="button"
-                                href="https://github.com/TheRichCourt/translations-testing-bundle"
-                                title="Translations Testing Bundle on GitHub"
-                                target="_blank"
-                                rel="nofollow noopener"
-                            >
-                                <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-labelledby="git_hub_title">
-                                    <title id="git_hub_title">The GitHub logo</title>
+                                    <div class="tech">
+                                        <span>PHP</span>
+                                        <span>Symfony</span>
+                                        <span>JS</span>
+                                        <span>CSS</span>
+                                    </div>
 
-                                    <path
-                                        fill="currentColor"
-                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                                    />
-                                </svg>
+                                    <p>Quickly debug translations without having to hunt down where they're used in your <strong>Symfony</strong> application. This is particularly handy if you're using ICU translations with complex logic.</p>
 
-                                View on GitHub
-                            </a>
+                                    <a
+                                        class="button"
+                                        href="https://github.com/TheRichCourt/translations-testing-bundle"
+                                        title="Translations Testing Bundle on GitHub"
+                                        target="_blank"
+                                        rel="nofollow noopener"
+                                    >
+                                        <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-labelledby="git_hub_title">
+                                            <title id="git_hub_title">The GitHub logo</title>
+
+                                            <path
+                                                fill="currentColor"
+                                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                                            />
+                                        </svg>
+
+                                        View on GitHub
+                                    </a>
+                                </div>
+                            </div>
                         </article>
 
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
-                            <h3>Joomla Extensions</h3>
-
-                            <div class="image-container border-radius-half">
+                        <article class="inner">
+                            <div class="image-container">
                                 <img
+                                    width="1600"
+                                    height="900"
                                     class="ratio-16-9"
-                                    src="./images/projects/joomla-960.jpg"
+                                    src="./images/projects/rc-gallery-for-portfolio.png"
                                     alt="Screenshots of various Joomla extensions I developed, shown on laptops in a V formation, with the Joomla logo in the background"
                                 >
                             </div>
 
-                            <p>A small selection of <strong>Joomla</strong> extensions, first developed many years ago, which are still downloaded hundreds of times a week.</p>
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>RC Gallery</h3>
 
-                            <p>These were built with a strong focus on making it as easy as possible for a Joomla user to build a site which not only looks professional, but makes it easy for their client to maintain after they hand it over.</p>
+                                    <p class="role">Open source project</p>
 
-                            <p><a href="https://therichcourt.com/joomla/gallery" target="_blank" rel="nofollow noopener">RC Gallery</a> is particularly popular, and I sell a range of add-ons to go with it.</p>
+                                    <div class="tech">
+                                        <span>PHP</span>
+                                        <span>JS</span>
+                                        <span>CSS</span>
+                                        <span>Joomla</span>
+                                    </div>
 
-                            <a
-                                class="button"
-                                href="https://therichcourt.com/joomla"
-                                target="_blank"
-                                rel="nofollow noopener"
-                            >
-                                View Joomla Extensions
-                            </a>
-                        </article>
-                    </div>
+                                    <p>A <strong>Joomla</strong> extension, and a set of add-ons. Downloaded hundreds of times every month.</p>
 
-                    <div class="flex gap-2 m-t-0">
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
-                            <h3>SeeTheWorld</h3>
-
-                            <div class="image-container border-radius-half">
-                                <img
-                                    class="ratio-16-9"
-                                    src="./images/projects/seetheworld-960.jpg"
-                                    alt="SeeTheWorld's logo with a tropical island in the background"
-                                >
+                                    <a
+                                        class="button"
+                                        href="https://therichcourt.com/joomla/gallery"
+                                        target="_blank"
+                                        rel="nofollow noopener"
+                                    >
+                                        Read More
+                                    </a>
+                                </div>
                             </div>
-
-                            <p>
-                                I've been working at <a href="https://www.seetheworld.com" target="_blank" rel="nofollow noopener">SeeTheWorld</a> as a <strong>full stack</strong> developer since 2018. Among many other things, I've
-                                migrated the codebase from PHP 5 to 7.4,
-                                converted a large existing framework-less application to Symfony 4 (and then 5),
-                                and integrated various third party frontend and backend libraries & services, including React, Redux, Webpack, Google Maps, Mapbox, CloudImage, Dexi, MJML and loads more.
-                            </p>
-
-                            <a
-                                class="button"
-                                href="https://www.seetheworld.com"
-                                target="_blank"
-                                rel="nofollow noopener"
-                            >
-                                Go to SeeTheWorld.com
-                            </a>
                         </article>
 
-                        <article class="bg-chalk text-charcoal-lighter p-2 border-radius-half">
-                            <h3>Games</h3>
-
-                            <div class="image-container border-radius-half">
+                        <article class="inner">
+                            <div class="image-container">
                                 <img
+                                    width="1600"
+                                    height="900"
                                     class="ratio-16-9"
                                     src="./images/projects/ball-thing-960.jpg"
                                     alt="Screenshot from Ball Thing, a game by Rich Court"
                                 >
                             </div>
 
-                            <p>I really enjoy making games. I've released a handful of mobile games (Android-only for now), and have also taken part in several game jams, producing some quirky games in less than 48hrs each.</p>
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>Ball Thing</h3>
 
-                            <p>All of my games (so far) are built using the Unity game engine, and written in C#.</p>
+                                    <p class="role">Mobile Game</p>
 
-                            <a
-                                class="button"
-                                href="https://therichcourt.com/games/"
-                                target="_blank"
-                                rel="nofollow noopener"
-                            >
-                                Check out my games
-                            </a>
+                                    <div class="tech">
+                                        <span>Unity</span>
+                                        <span>C#</span>
+                                        <span>Android</span>
+                                        <span>Google Play Games</span>
+                                    </div>
+
+                                    <p>A simple but fun 3D endless runner game, with pop-art styled graphics and a terrible name.</p>
+
+                                    <a
+                                        class="button"
+                                        href="https://therichcourt.com/games/ball-thing"
+                                        target="_blank"
+                                        rel="nofollow noopener"
+                                    >
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="inner">
+                            <div class="image-container">
+                                <img
+                                    width="1600"
+                                    height="900"
+                                    class="ratio-16-9"
+                                    src="./images/projects/outbreak-for-portfolio.jpg"
+                                    alt="Screenshot from Outbreak, a game by Rich Court"
+                                >
+                            </div>
+
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>Outbreak</h3>
+
+                                    <p class="role">Mobile Game</p>
+
+                                    <div class="tech">
+                                        <span>Unity</span>
+                                        <span>C#</span>
+                                        <span>Android</span>
+                                    </div>
+
+                                    <p>A 3D mobile game with strategy and puzzle elements.</p>
+
+                                    <a
+                                        class="button"
+                                        href="https://therichcourt.com/games/outbreak"
+                                        target="_blank"
+                                        rel="nofollow noopener"
+                                    >
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="inner">
+                            <div class="image-container">
+                                <img
+                                    width="1600"
+                                    height="900"
+                                    class="ratio-16-9"
+                                    src="./images/projects/detv-for-portfolio.jpg"
+                                    alt="Screenshot from Outbreak, a game by Rich Court"
+                                >
+                            </div>
+
+                            <div class="article-text-content">
+                                <div>
+                                    <h3>Game Jams</h3>
+
+                                    <p class="role">48-hour projects</p>
+
+                                    <div class="tech">
+                                        <span>Unity</span>
+                                        <span>C#</span>
+                                        <span>Windows</span>
+                                        <span>WebGL</span>
+                                    </div>
+
+                                    <p>I've also made a handful of PC and web games for game jams (where teams or solo participants are challenged to make a game within 48hrs).</p>
+                                    <p>Some I've made on my own, and some as part of a small team.</p>
+
+                                    <a
+                                        class="button"
+                                        href="https://therichcourt.com/games"
+                                        target="_blank"
+                                        rel="nofollow noopener"
+                                    >
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -265,7 +408,7 @@
         </main>
 
         <footer class="centre-content p-4 text-align-centre">
-            <p>Rich Court © 2015 - 2021.</p>
+            <p>Rich Court © 2015 - 2024.</p>
         </footer>
     </body>
 </html>
