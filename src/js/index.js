@@ -20,12 +20,12 @@ ReactDOM.render(
 const crazyTextRootElem = document.getElementById("crazy_text");
 
 ReactDOM.render(
-    <CrazyText subtitle="Developer">{"Rich Court"}</CrazyText>,
+    <CrazyText subtitle="Developer">Rich Court</CrazyText>,
     crazyTextRootElem
 );
 
 const copyrightRootElem = document.getElementById("copyright");
-console.log(copyrightRootElem);
+
 ReactDOM.render(
     <Copyright/>,
     copyrightRootElem
