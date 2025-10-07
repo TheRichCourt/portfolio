@@ -4,14 +4,14 @@ a.button {
     display: inline-flex;
     position: relative;
     align-items: center;
-    background-image: linear-gradient(135deg, $red, $pink);
     text-decoration: none;
-    padding: 1.5rem 1rem;
-    border-radius: .25rem;
-    color: $chalk;
-    height: 2.5rem;
+    padding: 1rem 2rem;
+    border-radius: 100vh;
+    background-color: $chalk;
+    color: $charcoal;
     overflow: hidden;
     border: none;
+    font-weight: 900;
 
     &::before {
         content: "";
@@ -20,7 +20,7 @@ a.button {
         height: 0;
         top: 50%;
         left: 50%;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: rgba(0, 0, 0, 0);
         background-image: none;
         border-radius: 100%;
         transition: width .14s ease, height .14s ease, top .14s ease, left .14s ease, background-color .14s ease;
@@ -34,7 +34,7 @@ a.button {
             top: 0;
             left: 0;
             border-radius: 0;
-            background-color: rgba(255, 255, 255, .1);
+            background-color: rgba(0, 0, 0, .1);
             transition: width .28s ease, height .28s ease, top .28s ease, left .28s ease, background-color .28s ease;
         }
     }
