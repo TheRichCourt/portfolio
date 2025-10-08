@@ -1,3 +1,7 @@
+# Development
+
+Best to run in a container, since this still uses a fairly old version of Node.
+
 ```bash
 docker build . -t portfolio
 docker run -d portfolio -v .:/usr/src/app
@@ -17,10 +21,7 @@ Check that images have been processed correctly. If not, kill webpack and try ag
 
 ## Push it live
 
-```
+```bash
 rsync -r public/* [user]]@[domain]:[site_files_path]
 ```
 
-<!-- @todo Update STW images -->
-<!-- @todo add more games -->
-<!-- @todo Continue design improvements -->
