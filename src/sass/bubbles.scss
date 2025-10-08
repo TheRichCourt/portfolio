@@ -17,10 +17,7 @@
         box-shadow: inset .5rem .5rem 1rem rgba(255, 255, 255, .8);
         border-radius: 50%;
         transition: background-color .28s linear, box-shadow .28s linear;
-
-        @supports (backdrop-filter: blur(1rem)) {
-            backdrop-filter: blur(1rem);
-        }
+        backdrop-filter: blur(1rem);
 
         &.lit-up {
             // background-color: rgba(255, 255, 255, .8);
@@ -33,6 +30,7 @@
             display: block;
             width: 8rem;
             height: 8rem;
+            transition: width .28s ease, height .28s ease;
 
             @media only screen and (max-width: 1024px) {
                 width: 4rem;
