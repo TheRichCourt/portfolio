@@ -9,24 +9,32 @@ import './lazy-images';
 import "../index.html";
 
 import "../sass/all.scss";
+import CircleText from "./CircleText";
 
 const bubblesRootElem = document.getElementById("bubbles");
 
 ReactDOM.render(
-    <Bubbles/>,
+    <Bubbles />,
     bubblesRootElem
 );
 
 const crazyTextRootElem = document.getElementById("crazy_text");
 
 ReactDOM.render(
-    <CrazyText subtitle="Developer">Rich Court</CrazyText>,
+    <CrazyText>Rich Court</CrazyText>,
     crazyTextRootElem
+);
+
+const circleTextElem = document.getElementById("circle_text");
+
+ReactDOM.render(
+    <CircleText text="Creator of fine websites, apps and games, since 2009  •  " />,
+    circleTextElem
 );
 
 const copyrightRootElem = document.getElementById("copyright");
 
 ReactDOM.render(
-    <Copyright/>,
+    <Copyright />,
     copyrightRootElem
 );

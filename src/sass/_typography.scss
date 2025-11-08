@@ -1,5 +1,19 @@
 @import "./settings/colours";
 
+@font-face {
+    font-family: 'Caprasimo';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Caprasimo'), url('../font/caprasimo-regular.ttf') format('ttf');
+}
+
+// @font-face {
+//     font-family: 'Magic Vintage';
+//     font-style: normal;
+//     font-weight: normal;
+//     src: local('Magic Vintage'), url('../font/magic-vintage.ttf') format('ttf');
+// }
+
 // @font-face {
 //     font-family: 'Sharp Sans';
 //     font-style: normal;
@@ -15,30 +29,41 @@
 // }
 
 ::selection {
-    color: $chalk;
+    color: $charcoal;
     background-color: $pink;
 }
 
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-family: 'Inter', 'Noto Emoji', 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 h1 {
+    font-family: 'Caprasimo';
     font-size: clamp(6rem, 15vw, 16rem);
-    font-weight: 700;
+    letter-spacing: -.09375em;
+    font-weight: 100;
     line-height: 1;
+    text-shadow: -.04em 0 0 $charcoal;
+    // color: rgba(255, 255, 255, .5);
 }
 
 h2 {
-    font-size: clamp(4rem, 8vw, 10rem);
+    font-family: 'Caprasimo';
+    font-size: 7rem;
+    letter-spacing: -.6rem;
+    text-shadow: -.5rem 0 0 $charcoal;
     font-weight: 700;
     line-height: 1;
+    color: $yellow;
+
 }
 
 h3 {
-    font-size: clamp(2rem, 3vw, 4rem);
+    font-family: 'Caprasimo';
+    font-size: 4rem;
+    letter-spacing: -.25rem;
     font-weight: 700;
     line-height: 1;
 }
@@ -55,8 +80,6 @@ h5 {
 }
 
 p {
-    font-size: 1rem;
-
     &.subtitle {
         font-size: 1.5rem;
         font-weight: 400;
@@ -81,17 +104,18 @@ article img {
 }
 
 article {
-    > h1,
-    > h2,
-    > h3,
-    > h4,
-    > h5,
-    > p,
-    > ul,
-    > ol,
-    > dl,
-    > img,
-    > picture > img {
+
+    >h1,
+    >h2,
+    >h3,
+    >h4,
+    >h5,
+    >p,
+    >ul,
+    >ol,
+    >dl,
+    >img,
+    >picture>img {
         // In articles, let's stick to a nice width
         max-width: 30rem;
         width: 100%;
@@ -139,4 +163,11 @@ code {
 
 .text-align-left {
     text-align: left;
+}
+
+p,
+ul,
+ol,
+dl {
+    font-size: 1.25rem;
 }

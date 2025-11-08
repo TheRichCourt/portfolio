@@ -1,3 +1,5 @@
+@import "./settings/colours";
+
 .bubbles-container {
     position: absolute;
     top: 0;
@@ -13,16 +15,19 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-image: radial-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .1));
-        box-shadow: inset .5rem .5rem 1rem rgba(255, 255, 255, .8);
+        background-color: $chalk;
+        // background-image: radial-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .1));
+        // box-shadow: inset .5rem .5rem 1rem rgba(255, 255, 255, .8);
         border-radius: 50%;
         transition: background-color .28s linear, box-shadow .28s linear;
-        backdrop-filter: blur(1rem);
+        // backdrop-filter: blur(1rem);
+        border: 1px solid rgba(255, 255, 255, .2);
+
 
         &.lit-up {
             // background-color: rgba(255, 255, 255, .8);
-            background-color: #32a8bd;
-            box-shadow: inset .25rem .25rem 2rem #bd4932;
+            background-color: $yellow;
+            // box-shadow: inset .25rem .25rem 2rem #bd4932;
             transition: none;
         }
 

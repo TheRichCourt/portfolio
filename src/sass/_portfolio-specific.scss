@@ -10,34 +10,43 @@
     initial-value: 0px;
 }
 
+@property --bg-gap {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0px;
+}
+
 @keyframes rotate-bg {
     from {
         --bg-rotation: 0deg;
         --bg-position: 0rem;
+        // --bg-gap: 99px;
     }
 
     to {
         --bg-rotation: 360deg;
-        --bg-position: 16rem;
+        --bg-position: 8rem;
+        // --bg-gap: 99px;
     }
 }
 
 body {
     --bg-rotation: 0deg;
     --bg-position: 99px;
-    --dot-size: 2px;
+    --bg-gap: 99px;
+    --dot-size: 5px;
     background-color: $pink;
     background:
-        radial-gradient(transparent 75%, $charcoal),
+        radial-gradient(transparent 25%, $charcoal),
         linear-gradient(transparent calc(var(--dot-size) / 2),
             $charcoal calc(var(--dot-size) / 2),
-            $charcoal 99px,
-            transparent 99px),
+            $charcoal var(--bg-gap),
+            transparent var(--bg-gap)),
         linear-gradient(90deg,
             transparent calc(var(--dot-size) / 2),
             $charcoal calc(var(--dot-size) / 2),
-            $charcoal 99px,
-            transparent 99px),
+            $charcoal var(--bg-gap),
+            transparent var(--bg-gap)),
         conic-gradient(from var(--bg-rotation),
             $red,
             $blue,
@@ -58,6 +67,144 @@ body {
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+@keyframes laptop-keyframes {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes setsquare-keyframes {
+    0% {
+        transform: rotate(5deg) scaleY(1);
+    }
+
+    50% {
+        transform: rotate(-10deg) scaleY(1);
+    }
+
+    100% {
+        transform: rotate(5deg) scaleY(1);
+    }
+}
+
+@keyframes joypad-keyframes {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(25deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+
+    }
+}
+
+#key_facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    min-height: 100vh;
+    align-items: start;
+    width: 80vw;
+    margin-inline: auto;
+
+    >div {
+        text-align: center;
+        padding: 2rem;
+        padding-top: 33vh;
+        position: sticky;
+        top: 0;
+        height: fit-content;
+        margin-bottom: 50vh;
+
+        &:nth-child(1) {
+            margin-top: 0;
+
+            .big-text {
+                color: $red;
+                transform-origin: center;
+
+                &:hover {
+                    animation: laptop-keyframes .2s 1 linear;
+                }
+
+                +div {
+                    color: $red;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            margin-top: 33vh;
+
+            .big-text {
+                color: $yellow;
+                transform-origin: center;
+
+                &:hover {
+                    animation: setsquare-keyframes .2s 1 linear;
+                }
+
+                +div {
+                    color: $yellow;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            margin-top: 67vh;
+            perspective: 250px;
+
+            .big-text {
+                color: $blue;
+                transform-origin: center;
+
+                &:hover {
+                    animation: joypad-keyframes .2s 1 linear;
+                }
+
+                +div {
+                    color: $blue;
+                }
+            }
+        }
+
+        .big-text {
+            font-size: 10rem;
+            // opacity: .25;
+
+            +div {
+                font-family: 'Caprasimo';
+                letter-spacing: -.1em;
+                font-size: 3rem;
+            }
+        }
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        &:nth-child(2) {
+            margin-top: 33vh;
+        }
+
+        &:nth-child(3) {
+            margin-top: 67vh;
+        }
+    }
 }
 
 @keyframes wobbly-shape {
@@ -141,9 +288,7 @@ img.profile-picture {
 
 .bg-red-map-fareham {
     background-image:
-        linear-gradient(135deg,
-            rgba(189, 73, 50, 0.75),
-            rgba(188, 50, 124, 0.75)),
+        linear-gradient(rgba(0, 0, 0, 0.5)),
         url("https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/[-1.3066,50.7638,-1.0373,50.9338]/1280x1280?access_token=pk.eyJ1IjoidGhlcmljaGNvdXJ0IiwiYSI6ImNqdDMwdW1zNjFrZnQ0YXF0ZDU3MDIzdGoifQ.ZweulZXFgeSuZ9HZ6WrpTw");
     background-size: cover;
     background-position: center;
@@ -158,17 +303,17 @@ img.profile-picture {
 }
 
 .bg-yellow-translucent {
-    background-image: linear-gradient(135deg,
-            rgba(219, 164, 58, 0.75),
-            rgba(216, 58, 69, 0.75));
+    // background-image: linear-gradient(135deg,
+    //         rgba(219, 164, 58, 0.75),
+    //         rgba(216, 58, 69, 0.75));
 }
 
 .glazed {
     backdrop-filter: blur(10px) saturate(150%);
-    background-color: rgb(50, 168, 189, 0.2);
+    background-color: $charcoal;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1rem;
-    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
 
     @media (min-width: 1024px) {
@@ -186,14 +331,24 @@ img.profile-picture {
     }
 }
 
+@counter-style repeating-emoji {
+    //   system: cyclic;
+    symbols: "👨‍💻" "🕹️" "🚴";
+    suffix: "   ";
+}
+
+ul {
+    list-style-type: repeating-emoji;
+}
+
 #my-work {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     padding-inline: 1rem;
 
     @media (min-width: 1024px) {
-        gap: 8rem;
+        gap: 16rem;
         padding: 2rem;
     }
 
