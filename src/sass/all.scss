@@ -15,6 +15,22 @@
     overflow: hidden;
 }
 
+:root {
+    --font-scale: 1.3;
+    --font-size-s: calc(var(--font-size-m) / var(--font-scale));
+    --font-size-m: 1rem;
+    --font-size-l: calc(var(--font-size-m) * var(--font-scale));
+    --font-size-xl: calc(var(--font-size-l) * var(--font-scale));
+    --font-size-xxl: calc(var(--font-size-xl) * var(--font-scale));
+    --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-scale));
+    --font-size-xxxxl: calc(var(--font-size-xxxl) * var(--font-scale));
+    --font-size-xxxxxl: calc(var(--font-size-xxxxl) * var(--font-scale));
+
+    @media (min-width: 1024px) {
+        --font-scale: 1.5;
+    }
+}
+
 @import "typography";
 @import "layout";
 @import "colours";

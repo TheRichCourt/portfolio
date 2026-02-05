@@ -41,18 +41,18 @@ html {
 
 h1 {
     font-family: 'Caprasimo';
-    font-size: clamp(6rem, 15vw, 16rem);
+    // Special case
+    font-size: clamp(6rem, 15vw, var(--font-size-xxxxxl));
     letter-spacing: -.09375em;
     font-weight: 100;
     line-height: 1;
     text-shadow: -.04em 0 0 $charcoal;
-    // color: rgba(255, 255, 255, .5);
 }
 
 h2 {
     font-family: 'Caprasimo';
-    font-size: 7rem;
-    letter-spacing: -.6rem;
+    font-size: var(--font-size-xxxl);
+    letter-spacing: -.1em;
     text-shadow: -.5rem 0 0 $charcoal;
     font-weight: 700;
     line-height: 1;
@@ -62,26 +62,26 @@ h2 {
 
 h3 {
     font-family: 'Caprasimo';
-    font-size: 4rem;
-    letter-spacing: -.25rem;
+    font-size: var(--font-size-xxl);
+    letter-spacing: -.05em;
     font-weight: 700;
     line-height: 1;
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
     font-weight: 700;
     line-height: 1;
 }
 
 h5 {
-    font-size: 1.25rem;
+    font-size: var(--font-size-l);
     font-weight: 400;
 }
 
 p {
     &.subtitle {
-        font-size: 1.5rem;
+        font-size: var(--font-size-l);
         font-weight: 400;
     }
 }
@@ -169,5 +169,5 @@ p,
 ul,
 ol,
 dl {
-    font-size: 1.25rem;
+    font-size: var(--font-size-m);
 }
