@@ -16,30 +16,30 @@
         top: 0;
         left: 0;
         background-color: $chalk;
-        // background-image: radial-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .1));
-        // box-shadow: inset .5rem .5rem 1rem rgba(255, 255, 255, .8);
         border-radius: 50%;
-        transition: background-color .28s linear, box-shadow .28s linear;
-        // backdrop-filter: blur(1rem);
+        transition: background-color .28s linear;
         border: 1px solid rgba(255, 255, 255, .2);
+        padding: 2rem;
 
+        @media only screen and (max-width: 1024px) {
+            padding: 1rem;
+        }
 
         &.lit-up {
-            // background-color: rgba(255, 255, 255, .8);
-            background-color: $yellow;
-            // box-shadow: inset .25rem .25rem 2rem #bd4932;
+            background-color: #aaa;
+            transform: scale(.9);
             transition: none;
         }
 
         img {
+            --size: 8rem;
             display: block;
-            width: 8rem;
-            height: 8rem;
+            width: var(--size);
+            height: var(--size);
             transition: width .28s ease, height .28s ease;
 
             @media only screen and (max-width: 1024px) {
-                width: 4rem;
-                height: 4rem;
+                --size: 3rem;
             }
         }
     }

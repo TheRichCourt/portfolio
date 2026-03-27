@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const MAX_VELOCITY = .25;
 const MIN_VELOCITY = .15;
-const SMALL_BUBBLE_WIDTH_REM = 8;
+const SMALL_BUBBLE_WIDTH_REM = 5;
 const LARGE_BUBBLE_WIDTH_REM = 12;
 const BOUNCE_IMMUNITY_TIME_MS = 500;
 
@@ -29,7 +29,7 @@ const Bubble = props => {
 
     const animate = useCallback(() => {
         setVectors(currentVectors => {
-            const newVelocity = {...currentVectors.velocity};
+            const newVelocity = { ...currentVectors.velocity };
             const now = new Date().getTime();
 
             // Detect bounces
@@ -88,7 +88,7 @@ const Bubble = props => {
     const bubbleWidthRem = window.matchMedia("screen and (max-width: 1024px)").matches
         ? SMALL_BUBBLE_WIDTH_REM
         : LARGE_BUBBLE_WIDTH_REM
-    ;
+        ;
 
     // We've been working from 0-100 to keep it somple, but need to better detect edges
     const remAdjustment = {
@@ -102,20 +102,21 @@ const Bubble = props => {
     const litUpClass = vectors.position.x >= 100 || vectors.position.x <= 0 || vectors.position.y >= 100 || vectors.position.y <= 0
         ? "lit-up"
         : ""
-    ;
+        ;
 
     return (
         <div
-            title={props.name}
-            className={`p-2 ${litUpClass}`}
+            className={litUpClass}
             style={{
                 transform: `${translateX} ${translateY}`,
             }}
         >
             <img
                 src={props.src}
-                alt={props.name}
+                alt={`${props.name} logo`}
             />
+
+            <span className="sr-only">{props.name}</span>
         </div>
     );
 };
