@@ -385,15 +385,17 @@ ul {
     --item-size-ish: 18rem;
     display: flex;
     // grid-template-columns: repeat(auto-fill, minmax(var(--item-size-ish), 1fr));
-    padding-inline: 2rem;
     align-self: stretch;
     gap: 1rem;
     align-items: stretch;
     justify-content: center;
+    flex-wrap: wrap;
+    padding-inline: 1rem;
 
     @media (min-width: 1024px) {
         --item-size-ish: 26rem;
         gap: 2rem;
+        padding-inline: 2rem;
     }
 
     article {
@@ -407,10 +409,16 @@ ul {
         padding: 1rem;
         background-color: var(--bg-my-work-item);
         flex-basis: 24rem;
+        flex-grow: 1;
+        max-width: 100%;
+
+        @media (min-width: 1024px) {
+            flex-grow: 0;
+        }
 
         &.work-item-rq {
             background-color: #223A6C;
-            color: #4cb1ff;
+            color: $chalk;
         }
 
         &.work-item-seetheworld {
@@ -419,27 +427,27 @@ ul {
 
         &.work-item-translations {
             background-color: $green;
-            color: $red;
+            color: $chalk;
         }
 
         &.work-item-gallery {
             background-color: $red;
-            color: $green;
+            color: $chalk;
         }
 
         &.work-item-ballthing {
-            background-color: #E3D92C;
-            color: #EE5029;
+            background-color: #EE5029;
+            color: $chalk;
         }
 
         &.work-item-outbreak {
-            background-color: #F96D4F;
-            color: #80f6ff;
+            background-color: #4B332C;
+            color: $chalk;
 
         }
 
         &.work-item-gamejams {
-            background-color: #746D63;
+            background-color: #3D738F;
         }
 
         .article-text-content {
