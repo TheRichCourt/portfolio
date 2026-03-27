@@ -12,8 +12,6 @@ const CircleText = ({ text }) => {
                 }}
             >
                 {text.split("").map((char, charIndex) => {
-                    console.log(char, charIndex)
-
                     return (
                         <span
                             key={charIndex}
