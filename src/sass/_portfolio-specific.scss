@@ -1,4 +1,4 @@
-@import "./settings/colours";
+@use "./settings/colours" as *;
 
 @property --bg-rotation {
     syntax: "<angle>";
@@ -9,25 +9,27 @@
 @property --bg-position {
     syntax: "<length>";
     inherits: false;
-    initial-value: 0px;
+    initial-value: 0;
 }
 
 @property --bg-gap {
     syntax: "<length>";
     inherits: false;
-    initial-value: 0px;
+    initial-value: 0;
 }
 
 @keyframes rotate-bg {
     from {
         --bg-rotation: 0deg;
         --bg-position: 0rem;
+
         // --bg-gap: 99px;
     }
 
     to {
         --bg-rotation: 360deg;
         --bg-position: 8rem;
+
         // --bg-gap: 99px;
     }
 }
@@ -48,11 +50,11 @@ body::before {
     position: fixed;
     inset: 0;
     z-index: -1;
+
     --bg-rotation: 0deg;
     --bg-position: 99px;
     --bg-gap: 99px;
     --dot-size: 5px;
-    background-color: $pink;
     background:
         radial-gradient(transparent 25%, $charcoal),
         linear-gradient(transparent calc(var(--dot-size) / 2),
@@ -141,7 +143,7 @@ body::before {
     width: 80vw;
     margin-inline: auto;
 
-    @media (min-width: 1024px) {
+    @media (width >= 1024px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -151,7 +153,7 @@ body::before {
         top: 0;
         height: fit-content;
 
-        @media (min-width: 1024px) {
+        @media (width >= 1024px) {
             padding-top: 33vh;
             margin-bottom: 50vh;
             position: sticky;
@@ -175,7 +177,7 @@ body::before {
         }
 
         &:nth-child(2) {
-            @media (min-width: 1024px) {
+            @media (width >= 1024px) {
                 margin-top: 33vh;
             }
 
@@ -196,7 +198,7 @@ body::before {
         &:nth-child(3) {
             perspective: 250px;
 
-            @media (min-width: 1024px) {
+            @media (width >= 1024px) {
                 margin-top: 67vh;
             }
 
@@ -216,16 +218,17 @@ body::before {
 
         .big-text {
             font-size: 10rem;
+
             // opacity: .25;
 
             +div {
-                font-family: "Caprasimo";
+                font-family: Caprasimo, cursive;
                 letter-spacing: -0.1em;
                 font-size: var(--font-size-xl);
             }
         }
 
-        @media (min-width: 1024px) {
+        @media (width >= 1024px) {
             &:nth-child(1) {
                 margin-top: 0;
             }
@@ -255,7 +258,7 @@ body::before {
         border-radius: 50% 60% 100% 80%;
     }
 
-    100% {
+    50% {
         border-radius: 60% 50% 80% 100%;
     }
 
@@ -300,12 +303,13 @@ body::before {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     margin-inline: auto;
+
     // filter: sepia(1) saturate(3.5) hue-rotate(330deg);
 
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1rem rgba(0, 0, 0, 0.2) solid;
+    border: 1rem rgb(0 0 0 / 20%) solid;
     scale: calc(1 / 1.2);
 }
 
@@ -322,7 +326,7 @@ img.profile-picture {
 
 .bg-red-map-fareham {
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgb(0 0 0 / 50%)),
         url("https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/[-1.3066,50.7638,-1.0373,50.9338]/1280x1280?access_token=pk.eyJ1IjoidGhlcmljaGNvdXJ0IiwiYSI6ImNqdDMwdW1zNjFrZnQ0YXF0ZDU3MDIzdGoifQ.ZweulZXFgeSuZ9HZ6WrpTw");
     background-size: cover;
     background-position: center;
@@ -345,12 +349,13 @@ img.profile-picture {
 .glazed {
     backdrop-filter: blur(10px) saturate(150%);
     background-color: $charcoal;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(255 255 255 / 10%);
     padding: 1rem;
+
     // box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
 
-    @media (min-width: 1024px) {
+    @media (width >= 1024px) {
         padding: 2rem;
     }
 }
@@ -358,7 +363,7 @@ img.profile-picture {
 #about-me {
     text-align: center;
 
-    @media (min-width: 1024px) {
+    @media (width >= 1024px) {
         flex-basis: calc(30rem + 4rem);
         flex-shrink: 0;
         text-align: start;
@@ -384,6 +389,7 @@ ul {
 .my-work {
     --item-size-ish: 18rem;
     display: flex;
+
     // grid-template-columns: repeat(auto-fill, minmax(var(--item-size-ish), 1fr));
     align-self: stretch;
     gap: 1rem;
@@ -392,7 +398,7 @@ ul {
     flex-wrap: wrap;
     padding-inline: 1rem;
 
-    @media (min-width: 1024px) {
+    @media (width >= 1024px) {
         --item-size-ish: 26rem;
         gap: 2rem;
         padding-inline: 2rem;
@@ -405,6 +411,7 @@ ul {
         flex-direction: column;
         gap: 1rem;
         border-radius: 1.5rem;
+
         // overflow: hidden;
         padding: 1rem;
         background-color: var(--bg-my-work-item);
@@ -412,7 +419,7 @@ ul {
         flex-grow: 1;
         max-width: 100%;
 
-        @media (min-width: 1024px) {
+        @media (width >= 1024px) {
             flex-grow: 0;
         }
 
@@ -464,12 +471,12 @@ ul {
                     // &::after {
                     content: "";
                     flex-grow: 1;
+
                     // }
                 }
 
                 >a {
-                    justify-self: flex-end;
-                    align-self: stretch;
+                    place-self: stretch flex-end;
                     text-align: center;
                 }
             }
@@ -503,7 +510,7 @@ ul {
 
         span {
             padding: 0.25rem 0.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgb(255 255 255 / 20%);
             border-radius: 0.25rem;
             font-weight: 700;
         }

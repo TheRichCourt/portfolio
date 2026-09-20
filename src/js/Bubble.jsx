@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 import PropTypes from "prop-types";
 
 const MAX_VELOCITY = .25;
@@ -6,6 +6,8 @@ const MIN_VELOCITY = .15;
 const SMALL_BUBBLE_WIDTH_REM = 5;
 const LARGE_BUBBLE_WIDTH_REM = 12;
 const BOUNCE_IMMUNITY_TIME_MS = 500;
+const FRAME_DURATION_AT_60_FPS_MS = 1000 / 60;
+const MAX_DELTA_TIME_MS = 1000 / 15;
 
 const Bubble = props => {
     const generateRandomVelocity = () => ({
@@ -26,11 +28,18 @@ const Bubble = props => {
     const xBounceTimeRef = useRef(0);
     const yBounceTimeRef = useRef(0);
     const animationFrameRef = useRef(null);
+    const lastFrameTimeRef = useRef(null);
 
-    const animate = useCallback(() => {
+    const animate = useCallback(timestamp => {
+        const previousFrameTime = lastFrameTimeRef.current ?? timestamp - FRAME_DURATION_AT_60_FPS_MS;
+        const deltaTime = Math.min(timestamp - previousFrameTime, MAX_DELTA_TIME_MS);
+        const frameScale = deltaTime / FRAME_DURATION_AT_60_FPS_MS;
+
+        lastFrameTimeRef.current = timestamp;
+
         setVectors(currentVectors => {
             const newVelocity = { ...currentVectors.velocity };
-            const now = new Date().getTime();
+            const now = Date.now();
 
             // Detect bounces
             if (
@@ -50,10 +59,10 @@ const Bubble = props => {
             }
 
             return {
-                // Move by the appropriate amount for the new velocity
+                // Velocity is expressed as movement per frame at 60 FPS.
                 position: {
-                    x: currentVectors.position.x + currentVectors.velocity.x,
-                    y: currentVectors.position.y + currentVectors.velocity.y,
+                    x: currentVectors.position.x + currentVectors.velocity.x * frameScale,
+                    y: currentVectors.position.y + currentVectors.velocity.y * frameScale,
                 },
                 velocity: newVelocity,
             };
@@ -68,6 +77,7 @@ const Bubble = props => {
     useEffect(() => {
         if (props.isAnimating && !window.matchMedia("(prefers-reduced-motion)").matches) {
             // Start the animation loop
+            lastFrameTimeRef.current = null;
             animationFrameRef.current = window.requestAnimationFrame(animate);
         } else {
             // Cancel any existing animation frame
@@ -75,6 +85,8 @@ const Bubble = props => {
                 window.cancelAnimationFrame(animationFrameRef.current);
                 animationFrameRef.current = null;
             }
+
+            lastFrameTimeRef.current = null;
         }
 
         // Cleanup function to cancel animation frame when component unmounts
@@ -82,6 +94,8 @@ const Bubble = props => {
             if (animationFrameRef.current) {
                 window.cancelAnimationFrame(animationFrameRef.current);
             }
+
+            lastFrameTimeRef.current = null;
         };
     }, [props.isAnimating, animate]);
 

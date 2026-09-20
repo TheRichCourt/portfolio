@@ -1,4 +1,4 @@
-@import "./settings/colours";
+@use "./settings/colours" as *;
 
 .crazy-text-container {
     cursor: pointer;

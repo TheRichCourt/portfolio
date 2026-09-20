@@ -1,6 +1,6 @@
 @use "./settings/sizes";
 
-$spacingProperties: (
+$spacing-properties: (
     "m": "margin",
     "m-t": "margin-top",
     "m-r": "margin-right",
@@ -13,16 +13,16 @@ $spacingProperties: (
     "p-l": "padding-left",
 );
 
-@each $sizeName, $size in sizes.$sizes {
+@each $size-name, $size in sizes.$sizes {
     // Margin and padding classes
-    @each $name, $property in $spacingProperties {
-        .#{$name}-#{$sizeName} {
+    @each $name, $property in $spacing-properties {
+        .#{$name}-#{$size-name} {
             #{$property}: #{$size}rem !important;
         }
     }
 
     // Gap classes (for flex / grid layouts)
-    .gap-#{$sizeName} {
+    .gap-#{$size-name} {
         gap: #{$size}rem;
     }
 }

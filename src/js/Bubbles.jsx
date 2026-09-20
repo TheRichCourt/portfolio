@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/hooks";
 import Bubble from "./Bubble";
 
 import "../sass/bubbles.scss";
@@ -25,14 +25,18 @@ const Bubbles = () => {
     useEffect(() => {
         const bubblesSectionElem = document.getElementById("bubbles_section");
 
-        new IntersectionObserver(
+        const observer = new IntersectionObserver(
             entries => setIsAnimating(entries[0].isIntersecting),
             {
                 root: null,
                 rootMargin: "0px",
                 threshold: 0,
             }
-        ).observe(bubblesSectionElem);
+        );
+
+        observer.observe(bubblesSectionElem);
+
+        return () => observer.disconnect();
     }, []);
 
     return (

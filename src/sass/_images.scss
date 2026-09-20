@@ -7,11 +7,3 @@
         object-fit: cover;
     }
 }
-
-.lazyloading {
-    filter: blur(10px);
-}
-
-.lazyloaded {
-    transition: filter .28s ease;
-}

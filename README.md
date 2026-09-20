@@ -1,27 +1,42 @@
 # Development
 
-Best to run in a container, since this still uses a fairly old version of Node.
+This project uses Vite and requires Node.js 22.12 or newer.
 
 ```bash
-docker build . -t portfolio
-docker run -d portfolio -v .:/usr/src/app
+npm ci
+npm run dev
 ```
 
-Then in the container...
+Vite will print the local development URL. Changes to JavaScript, HTML, and Sass are reflected immediately.
+
+## Checks and production build
 
 ```bash
-cd /usr/src/app
-npm i
-node_modules/.bin/webpack watch --mode=development
+npm test
+npm run build
+npm run preview
 ```
 
-Use VS Code live server to preview the site.
+The optimized static site is written to `dist/`.
 
-Check that images have been processed correctly. If not, kill webpack and try again.
+## Deploy from GitHub with Coolify
 
-## Push it live
+Connect the repository to Coolify with a GitHub App. The automated GitHub App setup is recommended because it provides scoped repository access and push-triggered deployments without a manually configured webhook. Grant the app access only to this repository if it does not need account-wide access.
 
-```bash
-rsync -r public/* [user]]@[domain]:[site_files_path]
-```
+Create an application from the GitHub repository, select the production branch, and use these settings:
 
+- Build Pack: `Railpack (Beta)`
+- Base Directory: `/`
+- Is it a static site?: enabled
+- Publish Directory: `/dist`
+- Install Command: `npm ci`
+- Build Command: `npm run build`
+- Start Command: leave empty
+- Port: `80`
+- Domain: `https://portfolio2026.therichcourt.com`
+
+Railpack detects Node.js 22 from `package.json`, npm from `package-lock.json`, and the Vite build automatically. No `railpack.json`, persistent storage, runtime environment variables, or custom Nginx configuration are required.
+
+Before the first deployment, confirm Docker Buildx is available on the Coolify build server and helper container. Enable Auto Deploy if pushes to the selected GitHub branch should deploy automatically. Then deploy and confirm the root page and static assets are available over HTTPS. An optional HTTP health check can use `/` on port `80`.
+
+If the repository is connected by its public HTTPS URL instead of a GitHub App, configure a GitHub repository webhook separately to enable automatic deployments.

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { Fragment } from "preact";
+import { useEffect, useState } from "preact/hooks";
 import PropTypes from "prop-types";
 
 import "../sass/crazy-text.scss";
@@ -29,7 +30,7 @@ const CrazyText = props => {
         }, SPEED);
 
         return () => clearInterval(interval);
-    }, [length]);
+    }, [length, props.children]);
 
     const createSpanClasses = (currentLetterIndex) => {
         if (currentLetterIndex > length) {
@@ -55,7 +56,7 @@ const CrazyText = props => {
             <h1>
                 {props.children.split(" ").map((word, wordIndex) => {
                     return (
-                        <React.Fragment key={wordIndex}>
+                        <Fragment key={wordIndex}>
                             <span className="crazy-text-word">
                                 {word.split("").map((char, charIndex) => {
                                     return (
@@ -71,7 +72,7 @@ const CrazyText = props => {
 
                             {/* Space between the words */}
                             {" "}
-                        </React.Fragment>
+                        </Fragment>
                     );
                 })}
             </h1>

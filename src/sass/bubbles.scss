@@ -1,4 +1,4 @@
-@import "./settings/colours";
+@use "./settings/colours" as *;
 
 .bubbles-container {
     position: absolute;
@@ -18,15 +18,15 @@
         background-color: $chalk;
         border-radius: 50%;
         transition: background-color .28s linear;
-        border: 1px solid rgba(255, 255, 255, .2);
+        border: 1px solid rgb(255 255 255 / 20%);
         padding: 2rem;
 
-        @media only screen and (max-width: 1024px) {
+        @media only screen and (width <= 1024px) {
             padding: 1rem;
         }
 
         &.lit-up {
-            background-color: #aaa;
+            background-color: #aaaaaa;
             transform: scale(.9);
             transition: none;
         }
@@ -38,7 +38,7 @@
             height: var(--size);
             transition: width .28s ease, height .28s ease;
 
-            @media only screen and (max-width: 1024px) {
+            @media only screen and (width <= 1024px) {
                 --size: 3rem;
             }
         }

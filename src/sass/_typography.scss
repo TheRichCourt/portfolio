@@ -1,7 +1,7 @@
-@import "./settings/colours";
+@use "./settings/colours" as *;
 
 @font-face {
-    font-family: 'Caprasimo';
+    font-family: Caprasimo;
     font-style: normal;
     font-weight: normal;
     src: local('Caprasimo'), url('../font/caprasimo-regular.ttf') format('ttf');
@@ -36,21 +36,22 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: 'Inter', 'Noto Emoji', 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    font-family: Inter, 'Noto Emoji', Roboto, -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "helvetica neue", helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 h1 {
-    font-family: 'Caprasimo';
+    font-family: Caprasimo, cursive;
+
     // Special case
     font-size: clamp(6rem, 15vw, var(--font-size-xxxxxl));
-    letter-spacing: -.09375em;
+    letter-spacing: -.0938em;
     font-weight: 100;
     line-height: 1;
     text-shadow: -.04em 0 0 $charcoal;
 }
 
 h2 {
-    font-family: 'Caprasimo';
+    font-family: Caprasimo, cursive;
     font-size: var(--font-size-xxxl);
     letter-spacing: -.1em;
     text-shadow: -.5rem 0 0 $charcoal;
@@ -61,7 +62,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Caprasimo';
+    font-family: Caprasimo, cursive;
     font-size: var(--font-size-xxl);
     letter-spacing: -.05em;
     font-weight: 700;
@@ -69,7 +70,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'Caprasimo';
+    font-family: Caprasimo, cursive;
     font-size: var(--font-size-xl);
     letter-spacing: -.05em;
     font-weight: 700;
@@ -106,7 +107,6 @@ article img {
 }
 
 article {
-
     >h1,
     >h2,
     >h3,
@@ -121,10 +121,7 @@ article {
         // In articles, let's stick to a nice width
         max-width: 30rem;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0;
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem;
     }
 }
 
@@ -133,6 +130,7 @@ a {
     color: inherit;
     text-decoration: none;
     transition: color .28s linear;
+
     // border-bottom: .125rem solid $red;
 
     &:hover {
@@ -141,9 +139,9 @@ a {
 }
 
 code {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-family: Menlo, Consolas, Monaco, "Liberation Mono", "Lucida Console", monospace;
     white-space: pre;
-    background-image: linear-gradient(0deg, $charcoal, $charcoalLighter);
+    background-image: linear-gradient(0deg, $charcoal, $charcoal-lighter);
     color: $chalk;
     padding-left: .25rem;
     padding-right: .25rem;

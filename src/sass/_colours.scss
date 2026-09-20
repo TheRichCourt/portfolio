@@ -1,4 +1,4 @@
-@import "./settings//colours";
+@use "./settings/colours" as *;
 
 body {
     background-color: $charcoal;
@@ -27,7 +27,7 @@ body {
 }
 
 .bg-glass {
-    background-color: rgba(33, 33, 33, .8);
+    background-color: rgb(33 33 33 / 80%);
 
     @supports (backdrop-filter: blur(1rem)) {
         backdrop-filter: blur(1rem);
@@ -39,7 +39,7 @@ body {
 }
 
 .text-charcoal-lighter {
-    color: $charcoalLighter;
+    color: $charcoal-lighter;
 }
 
 .text-chalk {
