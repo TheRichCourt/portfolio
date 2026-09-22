@@ -1,7 +1,18 @@
 @use "./settings/colours" as *;
 
+#crazy_text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    padding: 4rem 2rem;
+    pointer-events: none;
+}
+
 .crazy-text-container {
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .crazy-text-word {
